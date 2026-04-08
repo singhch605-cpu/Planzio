@@ -1,0 +1,33 @@
+# Dependencies
+node_modules/
+dist/
+build/
+.output/
+.vercel/
+.next/
+
+# Environment Variables
+.env
+.env.local
+.env.*
+
+# Logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# OS Files
+.DS_Store
+Thumbs.db
+
+# Diagnostic Scripts (Handled in cleanup)
+check_mail.js
+check-db.js
+final-debug.js
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.code-workspace
