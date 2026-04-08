@@ -5,7 +5,9 @@ try {
   if (!process.env.FIREBASE_KEY) {
     throw new Error('FIREBASE_KEY environment variable is missing.');
   }
-  serviceAccount = JSON.parse(process.env.FIREBASE_KEY);
+  // Try to clean up the string if it contains literal \n characters
+  const rawKey = process.env.FIREBASE_KEY.replace(/\\n/g, '\n');
+  serviceAccount = JSON.parse(process.env.FIREBASE_KEY.startsWith('{') ? process.env.FIREBASE_KEY : rawKey);
 } catch (error) {
   console.error('❌ Failed to parse FIREBASE_KEY:', error.message);
   process.exit(1);
