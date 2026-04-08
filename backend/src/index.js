@@ -29,5 +29,5 @@ app.use('/api/reminders', reminderRoutes);
 
 app.get('/health', (req, res) => res.json({ status: 'ok' }));
 
-const PORT = 8888;
+const PORT = 8080;
 app.listen(PORT, () => console.log(`Planzio backend listening on port ${PORT}`));
